@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
@@ -43,6 +43,16 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       -- first key is the mode
+      v = {
+        ["<Leader>bd"] = {
+          cmd = '<cmd>lua require("b64").decode()<CR>',
+          desc = "Decode base64",
+        },
+        ["<Leader>be"] = {
+          cmd = '<cmd>lua require("b64").encode()<CR>',
+          desc = "Decode base64",
+        },
+      },
       n = {
         -- second key is the lefthand side of the map
 
